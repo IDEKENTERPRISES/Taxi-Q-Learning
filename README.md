@@ -12,7 +12,7 @@
 
 5. Discuss and compare both methods, using graphs to illustrate the **average amount of rewards** over time. 
 
-## Intitialisation: 
+## Initialisation: 
 
 _The packages required are:_
 - OpenAI Gym for the test environment.
