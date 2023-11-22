@@ -2,7 +2,7 @@
 
 ***This assessment consists of 5 subtasks:***
 
-1. Implement the _epsilon-greedy_ method for the Taxi Environment using OpenAI Gym.
+1. Implement the _epsilon-greedy or $\epsilon$-greedy_ method for the Taxi Environment using OpenAI Gym.
 
 2. Design a neural network using the epsilon-greedy method.
 
