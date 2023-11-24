@@ -53,7 +53,7 @@ A deep neural network is a form of artificial neural network which contains an i
 
 ### Figures and Visualization
 
-
+![Alt text](image.png)
 
 ### Acknowledgements
 
