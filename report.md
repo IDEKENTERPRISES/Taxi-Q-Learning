@@ -1,6 +1,13 @@
 # CS4049 CA2
 > By Hareeshan Elankeeran, Jules Desré-Crouch and Favour Jam
 
+
+## Introduction
+
+Reinforcement learning is the area of artificial intelligence that is focused on maximising a reward, through “mapping situations to actions”. The reward is maximised by balancing the exploration, or the information we can gather, and exploitation of an environment, or the information we know already. Reward maximisation to affect behaviour of an agent derived from experiments performed by both Ivan Pavlov and BF Skinner, with roots in psychology and neuroscience. The field was revitalised and integrated into computer science and artificial intelligence by Richard Sutton and Andrew Barto in 1979 and has had a steady influx of interest ever since. Reinforcement learning is centred around 3 core concepts, a policy $\pi$, which guides the agent on the behaviour it performs, a reward function $R\left(s\right)$, which allows for an agent to learn what a good and a bad decision are in the short term, and a value function $V\left(s\right)$, which is made up of the expected reward for the state.
+A reinforcement agent can be modelled by a Markov decision process (MDP); a formalisation where the Markovian principle is followed when decisions are made. These decisions, or the linking of states via actions, is partly random, because of the environment, and partly made by the agent, due to exploration. The Markovian principle is the notion that for a given state, the value depends on the states before it. 
+The Taxi environment, implemented using Gymnasium (formerly Open-AI Gym), was used due to the simplicity of both the environment implementation and the state-action table, which is made up of 500 observation states and 6 action states. The observation states are made up of each position on the $5\times5$ grid =\ 25 positions, each of the 5 locations the passenger can be at, which is either each of the 4 colours on the grid or in the taxi, and the destination being each of the 4 colours, $\therefore$ $25 \times 5 \times 4 = 500$. The 6 action states for the taxi agent are moving up, down, left, right, dropping off and picking up the passenger. 
+
 ## Epsilon-greedy
 
 The epsilon-greedy method in the context of reinforcement learning, particularly in the Taxi environment from OpenAI's Gym, is a strategy used to balance exploration and exploitation. This method is crucial in learning optimal actions in an uncertain environment.
@@ -15,20 +22,20 @@ In the Taxi environment, where the goal is to navigate a taxi to pick up and dro
 - **Exploitation** would be the taxi using its learned knowledge to follow the most rewarding path and actions.
 
 ### Epsilon-Greedy Method:
-1. **Parameter** ϵ: Epsilon is a value between 0 and 1, determining the likelihood of exploration.
-    - **High** ϵ: More exploration, less exploitation.
-    - **Low** ϵ: More exploitation, less exploration.
+1. **Parameter** $\epsilon$: Epsilon is a value between 0 and 1, determining the likelihood of exploration.
+    - **High** $\epsilon$: More exploration, less exploitation.
+    - **Low** $\epsilon$: More exploitation, less exploration.
 
 1. **Action Selection**:
-- With probability ϵ, the agent (taxi) chooses an action at random (exploration).
-- With probability 1−ϵ, the agent chooses the best-known action (exploitation).
+- With probability $\epsilon$, the agent (taxi) chooses an action at random (exploration).
+- With probability 1−$\epsilon$, the agent chooses the best-known action (exploitation).
 
 ### Application in Taxi Environment:
 - At the start, the taxi might randomly explore different actions (pickups, drop-offs, movements) to understand the environment.
 - As it learns, it starts exploiting known paths and actions that lead to successful passenger delivery.
-- Over time, the value of ϵ can be decreased, gradually shifting from exploration to exploitation.
+- Over time, the value of $\epsilon$ can be decreased, gradually shifting from exploration to exploitation.
 ### Balancing with Epsilon Decay:
-- Often, ϵ is decayed over time to slowly shift the focus from exploration to exploitation as the taxi gathers more experience.
+- Often, $\epsilon$ is decayed over time to slowly shift the focus from exploration to exploitation as the taxi gathers more experience.
 ### Importance in Taxi Environment:
 - Essential for learning the best routes and actions in the grid.
 - Prevents the agent from getting stuck in suboptimal strategies.
